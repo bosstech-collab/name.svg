@@ -1,25 +1,43 @@
-<svg fill="none" viewBox="0 0 800 120" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 120" width="600" height="120">
   <style>
-    @keyframes glow {
-      0% { filter: drop-shadow(0 0 5px #FF00FF) drop-shadow(0 0 10px #00FFFF); }
-      50% { filter: drop-shadow(0 0 20px #FF00FF) drop-shadow(0 0 30px #00FFFF) drop-shadow(0 0 40px #FF00FF); }
-      100% { filter: drop-shadow(0 0 5px #FF00FF) drop-shadow(0 0 10px #00FFFF); }
+    svg {
+      font-family: "Russo One", sans-serif;
+      width: 100%;
+      height: 100%;
     }
-    .boss-text {
-      animation: glow 3s ease-in-out infinite;
-      font-family: 'Orbitron', monospace;
-      font-weight: 900;
+    svg text {
+      animation: stroke 5s infinite alternate;
+      stroke-width: 2;
+      stroke: #365FA0;
+      font-size: 100px;
+    }
+    @keyframes stroke {
+      0% {
+        fill: rgba(72, 138, 204, 0);
+        stroke: rgba(54, 95, 160, 1);
+        stroke-dashoffset: 25%;
+        stroke-dasharray: 0 50%;
+        stroke-width: 2;
+      }
+      70% {
+        fill: rgba(72, 138, 204, 0);
+        stroke: rgba(54, 95, 160, 1);
+      }
+      80% {
+        fill: rgba(72, 138, 204, 0);
+        stroke: rgba(54, 95, 160, 1);
+        stroke-width: 3;
+      }
+      100% {
+        fill: rgba(72, 138, 204, 1);
+        stroke: rgba(54, 95, 160, 0);
+        stroke-dashoffset: -25%;
+        stroke-dasharray: 50% 0;
+        stroke-width: 0;
+      }
     }
   </style>
-  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" 
-        font-size="70" font-weight="bold" font-family="Orbitron" fill="url(#gradient)" class="boss-text">
-    𝐁𝐎𝐒𝐒-𝐌𝐃
+  <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+    BOSS-MD
   </text>
-  <defs>
-    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#FF00FF" />
-      <stop offset="50%" stop-color="#00FFFF" />
-      <stop offset="100%" stop-color="#FF00FF" />
-    </linearGradient>
-  </defs>
 </svg>
